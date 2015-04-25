@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+        <script src="jquery-2.1.1.js">
+        </script>
+
+        <script>
+			$(document).ready(function(){
+
+				$('#add').click(function(){
+					// get the qty
+					$('#qty').val();
+
+					// get the unit price
+					$('#price').val();
+
+					// total price
+					var x = totalPrice($('#qty').val(), $('#price').val());
+
+					function totalPrice(a, b) {
+    						return a * b;
+					}
+
+					document.getElementById("show").innerHTML = totalPrice($('#qty').val(), $('#price').val());
+					// display list item
+					$('x').append('<div id="add">');
+				});
+			});
+		</script>
+
+	</head>
+
+	<body>
+
+	<select id="price">
+            <option value=20> Apple </option>
+            <option value=30> Orange </option>
+            <option value=10> Banana </option>
+        </select>
+
+        <br><br>
+        Quantity:
+        <input id="qty" type="text" placeholder="Quantity"></input><br><br>
+
+        <button id="add"> Add to Cart</button> <br><br>
+        <button id="checkout">Check Out</button>
+
+	<div id="result"> </div>
+	<div id="total"> </div>
+
+	</body>
+</html> 		
